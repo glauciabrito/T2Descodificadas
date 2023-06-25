@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1 {
+    /*background-image: url("./ftitp.jpg");*/
+    background-image: linear-gradient(45deg, #8E89E9, #df68bb);
+    /*color: #8E89E9;*/
+    color: whitesmoke;
+    font-size: 40px;
+    text-shadow: 2px 2px 2px rgb(13, 2, 24);
+    min-height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 120px; /* Mesmo valor da altura do header */
+    /*margin-top: -120px;*/ /* Valor negativo igual ao padding-top */
+  }
+
+.titulo {
+    color: rgb(13, 2, 24);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+h3 {
+    background-image: url("./ftitp.jpg");
+    /*background-image: linear-gradient(45deg, #8E89E9, #df68bb);*/
+    /*color: #3232CD;*/
+    color: black;
+    font-size: 40px;
+    text-shadow: 1px 2px 1px #df68bb;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    /*padding-top: 120px;*/ /* Mesmo valor da altura do header */
+    /*margin-top: -120px;*/ /* Valor negativo igual ao padding-top */
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /*height: 120px;*/
+    /*background-color: #8E89E9;*/
+    /*background-color: #B779D2;*/
+    /*background-image: url("./ftitp.jpg");*/
+    background-image: linear-gradient(45deg, #8E89E9, #df68bb);
+    color: whitesmoke;
+    padding: 10px;
+    z-index: 10; /* Valor alto para ficar na frente dos iframes */
+} 
+
+footer {
+    background-color: #8E89E9;
+    color: whitesmoke;
+    width: 100%;
+    padding: 10px;
+}
+
+.logo, .sociais{
+    width: 25%;  
+}
+
+.logo img{
+    width: 240px;
+    cursor: pointer;
+}
+
+.menu{
+    width: 90%;  
+}
+
+.menu nav a{
+    /*color: #ffffff;*/
+    text-decoration: none;
+    /*padding-right: 20px;*/
+    padding-left: 20px;
+    padding-bottom: 8px;
+    font-size: 18px;
+    position: relative;
+    /*background-image: linear-gradient(45deg, #8E89E9, #df68bb);*/
+}
+
+.menu nav a::after{
+    content: " ";
+    width: 0px;
+    height: 3px;
+    background-image: linear-gradient(45deg, #8E89E9, #df68bb);
+    position: absolute;
+    /*top: 30px;*/
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s;
+}
+    
+.menu nav a:hover::after{
+    width: 30px;
+}
+
+.menu nav a:nth-of-type(1){
+    color: #b320a7;
+}
+
+.menu nav a:nth-of-type(1)::after{
+    width: 50px;
+}
+
+.sociais button{
+    width: 40px;
+    height: 40px;
+    background-image: linear-gradient(45deg, #8E89E9, #df68bb);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.5s;
+}
+
+.sociais button i{
+    size: 25px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.sociais button:hover{
+    transform: scale(0.9);
+}
+
+/*
+body {
+  padding-top: 120px;*/ /* Mesmo valor da altura do header */
+/*}
+*/
+
+
+/*menu mobile*/
+.menu-mobile{
+    background-color: #8E89E9;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 77px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.menu-mobile nav a{
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    padding: 20px 30px;
+    font-size: 14pt;
+}
+
+.menu-mobile nav a:hover{
+    background-color: rebeccapurple;
+}
+
+#btn-menu{
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    transition: .2s;
+    display: none;
+}
+
+.linha{
+    position: relative;
+    height: 3px;
+    background: #ffffff;
+    width: 25px;
+    display: block;
+    margin: 5px auto;
+    transform-origin: center;
+    transition: .2s;
+}
+
+#btn-menu.ativo{
+    border: 2px solid #df68bb;
+}
+
+#btn-menu.ativo .linha:nth-child(1){
+    transform: translateY(8px) rotate(-45deg);
+    background-color: #df68bb;
+}
+
+#btn-menu.ativo .linha:nth-child(3){
+    transform: translateY(-8px) rotate(45deg);
+    background-color: #df68bb;
+}
+
+#btn-menu.ativo .linha:nth-child(2){
+    width: 0;
+}
+
+header h1 {
+    line-height: 10vh;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+nav a {
+    line-height: 5vh;
+    padding: 0.2rem 0.5rem;
+    color: rebeccapurple;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+nav a:hover {
+    color: whitesmoke;
+    background-color: rebeccapurple;
+}
+
+h2 a {
+    line-height: 5vh;
+    padding: 0.2rem 0.5rem;
+    color: rgb(1, 1, 75);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+h2 a:hover {
+    color: whitesmoke;
+    background-color: rebeccapurple;
+}
+
+main {
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+footer address {
+    line-height: 5vh;
+    margin-left: 1rem;
+}
+
+footer address a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+footer address a:hover {
+    color: darkblue;
+}
+
+p {
+    margin: 0.5rem;
+    justify-content: center;
+}
+
+h2 {
+    background-color: #b3207b;
+    color: rgb(13, 2, 24);
+    font-size: 20px;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 1rem;
+    padding-left: 1rem;   
+}
+
+@media screen and (max-width: 1030px) {
+    .menu, .sociais{
+        display: none;
+    }
+
+    .logo{
+        width: 100%;
+    }
+
+    .menu-mobile.abrir{
+        visibility: visible;
+        height: calc(100vh - 77px);
+    }
+
+    #btn-menu{
+        display: block;
+    }
+}
+
