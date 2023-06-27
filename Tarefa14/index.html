@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilo.css">
+    <title>Invertendo caracteres</title>
+  </head>
+  <body>
+    <h2>Invertendo caracteres</h2>
+    <p>Informe a sequ&ecirc;ncia de caracteres: <input id="sequencia" type="text" /></p>
+    <br />
+    <button onclick="inverterSequencia()">Inverter</button>
+    <p id="resultado"></p>
+
+    <script>
+      function inverterSequencia() {
+        var sequencia = document.getElementById("sequencia").value;
+        var sequenciaInvertida = sequencia.split('').reverse().join('');
+        document.getElementById("resultado").innerHTML = "Sequ&ecirc;ncia invertida: " + sequenciaInvertida;
+        document.getElementById("sequencia").value = "";
+      }
+    </script>
+  </body>
+</html>
