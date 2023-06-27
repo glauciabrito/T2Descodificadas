@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilo.css">
+    <title>Soma de m&uacute;ltiplos</title>
+  </head>
+  <body>
+    <p>A soma de todos os m&uacute;ltiplos de 3 ou 5 abaixo de 1000 é: <span id="resultado"></span></p>
+
+    <script>
+      let soma = 0;
+
+      for (let i = 1; i < 1000; i++) {
+        if (i % 3 === 0 || i % 5 === 0) {
+          soma += i;
+        }
+      }
+
+      document.getElementById("resultado").textContent = soma;
+    </script>
+  </body>
+</html>

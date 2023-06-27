@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Maior n&uacute;mero</title>
+</head>
+<body>
+    <h2>Descubra qual o maior n&uacute;mero!</h2>
+    <p>Informe o primeiro n&uacute;mero:  <input id="num1" type="number"> </p>
+    <p>Informe o segundo n&uacute;mero:   <input id="num2" type="number"> </p>
+    <p>Informe o terceiro n&uacute;mero:  <input id="num3" type="number"> </p>
+    <br />
+    <button onclick="maiorNum()">Verificar</button>
+
+<script>
+    function maiorNum() {
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var num3 = document.getElementById("num3").value;
+    maxNum = Math.max(num1, num2, num3);
+
+    alert("O maior número entre os números inseridos é: " + maxNum);
+
+    // Limpa os campos de entrada
+    document.getElementById("num1").value = "";
+    document.getElementById("num2").value = "";
+    document.getElementById("num3").value = "";
+    }
+</script>
+</body>
+</html>
